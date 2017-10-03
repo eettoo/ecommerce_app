@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   get '/women' => 'pages#women'
 
-  get '/man' => 'pages#man'
+  get '/men' => 'pages#men'
 
 
 
