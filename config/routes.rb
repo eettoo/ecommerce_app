@@ -4,7 +4,6 @@ Rails.application.routes.draw do
 		resources :orders, :products
 	end
 
-
   devise_for :admins
   get '/home' => 'pages#home'
 
