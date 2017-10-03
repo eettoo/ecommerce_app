@@ -8,6 +8,6 @@ class PagesController < ApplicationController
   def women
   end
 
-  def man
+  def men
   end
 end
