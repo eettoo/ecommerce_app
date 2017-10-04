@@ -1,3 +1,3 @@
-class Shoppers::BasketsController < ApplicationsController
+class Shoppers::BasketsController < ApplicationController
 
 end
