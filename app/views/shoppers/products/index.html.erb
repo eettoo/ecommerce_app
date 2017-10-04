@@ -4,12 +4,14 @@
 
  <!-- avatar_for(product, size: 100) put carrierwave -->
 
- <%= link_to product.name,  %>
+ <%= link_to product.name, product_path(id: product.id)  %>
  
  <%= product.description %>
 
  <!-- product.gender -->
 
- $<%= product.price %>
+ <p>$<%= product.price %></p>
 
- <%= end %>
+ <%= link_to "Add to Cart" %>
+
+ <% end %>

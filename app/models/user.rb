@@ -7,8 +7,8 @@ class User < ApplicationRecord
   has_many :orders
   has_many :baskets
 
-  validates(:username, presence: true)
-  validates(:address, presence: true)
+  # validates(:username, presence: true)
+  # validates(:address, presence: true)
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
