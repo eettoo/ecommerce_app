@@ -1,4 +1,4 @@
-class Shoppers::BasketsController < ApplicationsController
+class Shoppers::BasketsController < ApplicationController
 
 	def create
 		@items_basket = ItemsBasket.new
