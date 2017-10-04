@@ -4,6 +4,14 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
+
+ @font-face {
+     font-family: "OpenSans-Regular";
+     font-family: "Ubuntu-Bold";
+     src: url(/assets/fonts/OpenSans-Regular.ttf) format("truetype");
+     src: url(/assets/fonts/Ubuntu-Bold.ttf) format("truetype")
+   }
+
 body,
 html {
     width: 100%;
@@ -11,14 +19,18 @@ html {
 }
 
 body,
-h1,
-h2,
 h3,
 h4,
 h5,
 h6 {
-    font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 700;
+    font-family: "OpenSans-Regular";
+
+}
+
+
+h1,
+h2 {
+  font-family: "Ubuntu-Bold";
 }
 
 .topnav {
@@ -41,6 +53,9 @@ h6 {
     background-size: cover;
 
 }
+
+
+
 
 .men-header {
   margin-top:-10px;
@@ -117,16 +132,48 @@ h6 {
     letter-spacing: 2px;
 }
 
-.content-section-a {
-    padding: 50px 0;
-    background-color: #f8f8f8;
+
+
+.first {
+  content: url("1.jpeg");
+  height: 800px;
+  width: 700px;
+  padding-top: 110px;
+
 }
 
-.content-section-b {
+.first-text {
+  display: inline-block;
+  position: relative;
+  left:940px;
+  bottom: 430px;
+}
+
+.second{
+  position: relative;
+  left: 600px;
+  content: url("2.jpeg");
+  height: 800px;
+  width: 700px;
+
+
+}
+
+.second-text {
+  display: inline-block;
+  position: relative;
+  left: 215px;
+  bottom: 450px;
+}
+
+
+
+
+/*.content-section-b {
     padding: 50px 0;
     border-top: 1px solid #e7e7e7;
     border-bottom: 1px solid #e7e7e7;
-}
+}*/
 
 .section-heading {
     margin-bottom: 30px;
@@ -141,14 +188,16 @@ h6 {
 .banner {
     padding: 100px 0;
     color: #f8f8f8;
-    background: url("../img/banner-bg.jpg") no-repeat center center;
+
     background-size: cover;
 }
 
+
+
 .banner h2 {
     margin: 0;
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
     font-size: 3em;
+    color: black;
 }
 
 .banner ul {
@@ -158,12 +207,14 @@ h6 {
 .banner-social-buttons {
     float: right;
     margin-top: 0;
+
 }
 
 @media(max-width:1199px) {
     ul.banner-social-buttons {
         float: left;
         margin-top: 15px;
+
     }
 }
 
@@ -174,20 +225,39 @@ h6 {
         font-size: 3em;
     }
 
+
+
     ul.banner-social-buttons > li {
         display: block;
         margin-bottom: 20px;
         padding: 0;
+
+
     }
 
     ul.banner-social-buttons > li:last-child {
         margin-bottom: 0;
+
     }
 }
 
+i.fa.fa-facebook.fa-3x::before {
+  color: black;
+}
+
+i.fa.fa-twitter.fa-3x::before {
+  color: black;
+}
+
+i.fa.fa-instagram.fa-3x::before {
+  color: black;
+}
+
+
+
 footer {
     padding: 50px 0;
-    background-color: #f8f8f8;
+    background-color: white;
 }
 
 p.copyright {
