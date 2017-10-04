@@ -1,4 +1,4 @@
-class Shoppers::BasketsController < ApplicationsController
+class Shoppers::ProductsController < ApplicationController
 
 	def index
 		@products = Product.all

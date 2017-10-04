@@ -1,3 +1,3 @@
-class Users::ItemsPaidsController < UsersController
+class Shoppers::ItemsPaidsController < ApplicationController
 
 end
