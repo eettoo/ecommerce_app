@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get '/shopping-cart' =>'pages#shopping-cart'
 
+  get '/women-t-shirts' => 'pages#women-t-shirts'
+
 
 
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

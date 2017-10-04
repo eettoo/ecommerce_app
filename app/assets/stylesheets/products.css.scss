@@ -1,0 +1,101 @@
+/* https://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, hgroup,
+menu, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/*Fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400');
+
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Flexbox product page */
+
+.product-filter {
+  display: flex;
+}
+
+.product-filter h1{
+  flex-grow: 1;
+  padding: 2%;
+  font-size: 30px;
+}
+
+.sort{
+  display: flex;
+  padding: 2%;
+  font-size: 15px;
+}
+
+.collection-sort{
+  display: flex;
+  flex-direction: column;
+}
+
+.products{
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1;
+}
+
+.product-card{
+  padding: 50px;
+  flex-grow: 1;
+  flex-basis: 16%;
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+
+.product-image img {
+  width: 300px;
+  height: 400px;
+
+}
+
+.product-info{
+  margin-top: auto;
+}
+
+@media (max-width: 920px) {
+  .product-card {
+    flex: 1 21%;
+  }
+
+  /* Select the first two */
+.products .product-card:first-child,
+.products .product-card:nth-child(2) {
+  flex: 2 46%;
+}
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    flex: 1 46%;
+  }
+}
