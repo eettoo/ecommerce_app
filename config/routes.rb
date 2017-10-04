@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-	namespace :admin do
-		resources :orders, :products
-	end
-
+	# namespace :admin do
+	# 	resources :orders
+	# 	resources :products
+	# end
+	
   devise_for :admins
+  
   get '/home' => 'pages#home'
 
   get '/women' => 'pages#women'
@@ -12,26 +16,28 @@ Rails.application.routes.draw do
   get '/men' => 'pages#men'
 
 
+
   get '/shopping-cart' =>'pages#shopping-cart'
 
 
-  namespace :user do
-	  resources :basket do 
-	  	resources :items_basket
+
+
+  
+  namespace :shoppers do
+	  resources :products, only: [:index, :show]
+	  resources :baskets do 
+	  	resources :items_baskets
 		end
 	end  
 
+ #  namespace :shoppers do
+	#   resources :orders do
+	#   	resources :items_paids
+ #  	end
+	# end
 
-  namespace :user do
-	  resources :order do
-	  	resources :items_paid
-  	end
-	end
 
-	resources :product
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: "pages#index"
 end
