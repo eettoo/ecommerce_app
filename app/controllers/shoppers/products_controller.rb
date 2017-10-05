@@ -6,6 +6,7 @@ class Shoppers::ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@items_basket = ItemsBasket.new
 	end
 
 end
