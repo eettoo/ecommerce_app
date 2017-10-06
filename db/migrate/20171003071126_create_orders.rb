@@ -8,7 +8,6 @@ class CreateOrders < ActiveRecord::Migration[5.1]
     	t.string :ship_status
     	t.date :payment_date
     	t.references :user
-    	t.references :items_paid
     end
   end
 end
