@@ -30,11 +30,11 @@ Rails.application.routes.draw do
 		end
 	end  
 
- #  namespace :shoppers do
-	#   resources :orders do
-	#   	resources :items_paids
- #  	end
-	# end
+  namespace :shoppers do
+	  resources :orders do
+	  	resources :items_paids
+  	end
+	end
 
 
 

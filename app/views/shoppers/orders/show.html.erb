@@ -1,0 +1,19 @@
+<h2>Items Paid in Order</h2>
+
+<% @paid_items.each do |f| %>
+
+	<table>
+		<thead>
+			<th>Product</th>
+			<th>Quantity</th>
+			<th>Price</th>
+		</thead>
+		<tbody>
+			<td><%= @productname %></td>
+			<td><%= f.quantity %></td>
+			<td><%= f.price %></td>
+		</tbody>
+	</table>
+<% end %>
+
+<%= link_to "Back", shoppers_orders_path %>
