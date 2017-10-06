@@ -19,7 +19,7 @@
 
 		<% @items_baskets.each do |chosen_items| %>
 
-			<% if chosen_items.basket == current_user.baskets.first %>
+			<% if chosen_items.basket == current_basket %>
 			<tr>
 				<td data-th="Product">
 					<div class="row">
