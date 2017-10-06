@@ -15,6 +15,13 @@ Rails.application.routes.draw do
 
   get '/men' => 'pages#men'
 
+
+
+  get '/shopping-cart' =>'pages#shopping-cart'
+
+
+
+
   
   namespace :shoppers do
 	  resources :products, only: [:index, :show]
@@ -23,11 +30,12 @@ Rails.application.routes.draw do
 		end
 	end  
 
- #  namespace :shoppers do
-	#   resources :orders do
-	#   	resources :items_paids
- #  	end
-	# end
+  namespace :shoppers do
+	  resources :orders do
+	  	resources :items_paids
+  	end
+	end
+
 
 
 
