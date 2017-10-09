@@ -136,7 +136,7 @@ h2 {
 
 .first {
   content: url("1.jpeg");
-  height: 800px;
+  height: 900px;
   width: 700px;
   padding-top: 110px;
 
@@ -150,11 +150,11 @@ h2 {
 }
 
 .second{
-  position: relative;
-  left: 600px;
   content: url("2.jpeg");
-  height: 800px;
-  width: 700px;
+  position: relative;
+  left: 665px;
+  height: 700px;
+  width: 600px;
 
 
 }
@@ -162,7 +162,7 @@ h2 {
 .second-text {
   display: inline-block;
   position: relative;
-  left: 215px;
+  left: 250px;
   bottom: 450px;
 }
 

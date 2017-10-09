@@ -1,0 +1,45 @@
+
+
+<h1>New Order</h1>
+
+<%= form_with scope: :order, url: admins_orders_path, local: true do |form| %>
+
+  <p>
+    <%= form.label :payment_status %><br>
+    <%= form.text_field :payment_status %>
+  </p>
+
+  <p>
+    <%= form.label :amount %><br>
+    <%= form.text_area :amount %>
+  </p>
+
+  <p>
+    <%= form.label :ship_date %><br>
+    <%= form.text_area :ship_date %>
+  </p>
+
+  <p>
+    <%= form.label :ship_status %><br>
+    <%= form.text_area :ship_status %>
+  </p>
+
+  <p>
+    <%= form.label :payment_date %><br>
+    <%= form.text_area :payment_date %>
+  </p>
+
+  <p>
+    <%= form.label :payment_date %><br>
+    <%= form.text_area :payment_date %>
+  </p>
+
+
+  <p>
+    <%= form.submit %>
+  </p>
+
+
+<%= link_to 'Back', admins_products_path %>
+
+<% end %>

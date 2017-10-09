@@ -1,0 +1,70 @@
+
+<!-- <h1>Listing Orders</h1>
+
+<%= link_to 'New order', new_admins_order_path %>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+
+  <% @orders.each do |order| %>
+    <tr>
+      <td><%= order.title %></td>
+      <td><%= order.text %></td>
+      <td><%= link_to 'Show', admins_order_path(order) %></td>
+    </tr>
+  <% end %>
+</table> -->
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="/javascripts/orders.js"></script>
+</head>
+
+
+<!-- <script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+<body>
+<p>&nbsp;</p>
+<h5 class="text-center">Orders</h5>
+<section class="container">
+<div class="table table-responsive">
+<table class="table table-responsive table-striped table-bordered">
+<thead>
+	<tr>
+    	<td>User</td>
+    	<td>Payment Status</td>
+      <td>Payment Date</td>
+      <td>Ship Status</td>
+    	<td>Ship Date</td>
+    	<td>Amount</td>
+      <td>Items Paid</td>
+    </tr>
+</thead>
+<tbody id="TextBoxContainer">
+</tbody>
+<tfoot>
+  <ts>
+    <th colspan="8">
+    <button id="btnAdd" type="button" class="btn btn-primary" data-toggle="tooltip" data-original-title="Add more controls"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp; Add&nbsp;</button></th>
+  </ts>
+</tfoot>
+</table>
+</div>
+</section>
+
+
+<!-- <table class="form-table" id="customFields">
+	<tr valign="top">
+		<th scope="row"><label for="customFieldName">Custom Field</label></th>
+		<td>
+			<input type="text" class="code" id="customFieldName" name="customFieldName[]" value="" placeholder="Input Name" /> &nbsp;
+			<input type="text" class="code" id="customFieldValue" name="customFieldValue[]" value="" placeholder="Input Value" /> &nbsp;
+			<a href="javascript:void(0);" class="addCF">Add</a>
+		</td>
+	</tr>
+</table> -->
+
+</body>
