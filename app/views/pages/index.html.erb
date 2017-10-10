@@ -83,9 +83,10 @@
                     </li>
 
                     <li>
-                    <a href="/shopping-cart"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+                    <%= link_to "<i class=\"fa fa-shopping-cart\"></i>".html_safe , shoppers_basket_path(id: current_user.baskets.first) %>
                     </li>
 
+                    <!-- Basket.joins(:user).where(user: current_user) -->
 
                     <li><%= link_to'Logout', destroy_user_session_path, method: :delete %></li>
 
