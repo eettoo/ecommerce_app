@@ -1,0 +1,15 @@
+<h1>All Products</h1>
+
+<%= @products.each do |product| %>
+
+ <!-- avatar_for(product, size: 100) put carrierwave -->
+
+ <%= link_to product.name,  %>
+ 
+ <%= product.description %>
+
+ <!-- product.gender -->
+
+ $<%= product.price %>
+
+ <%= end %>

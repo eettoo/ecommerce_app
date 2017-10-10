@@ -1,0 +1,26 @@
+<h2>All My Orders</h2>
+
+<% @myorders.each do |f| %>
+
+	<table>
+		<thead>
+			<th>ID</th>
+			<th>Amount</th>
+			<th>Payment Date</th>
+			<th>Ship Status</th>
+		</thead>
+		<tbody>
+			<td><%= f.id %></td>
+			<td><%= f.amount %></td>
+			<td><%= f.payment_date %></td>
+			<td><%= f.ship_status %></td>
+			<td><%= link_to "View", shoppers_order_path(id: f.id) %></td>
+			<td><%= link_to "Destroy", shoppers_order_path(id: f.id), method: :delete %>
+		</tbody>
+	</table>
+<% end %>
+
+<%= link_to "Back to Home Page", root_path %>
+
+<div><%= link_to "Create new test order", shoppers_orders_path, method: :post %></div>
+

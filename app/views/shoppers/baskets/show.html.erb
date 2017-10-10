@@ -1,0 +1,72 @@
+<div class="container">
+	
+	<h1>My cart</h1>
+
+	<table id="cart" class="table table-hover table-condensed">
+
+		<thead>
+			<tr>
+				<th style="width:50%">Product</th>
+				<th style="width:10%">Price</th>
+				<th style="width:8%">Quantity</th>
+				<th style="width:22%" class="text-center">Subtotal</th>
+				<th style="width:10%"></th>
+			</tr>
+		</thead>
+	
+		<tbody>
+		<% current_basket = current_user.baskets.first %>
+
+		<% @items_baskets.each do |chosen_items| %>
+
+			<% if chosen_items.basket == current_basket %>
+			<tr>
+				<td data-th="Product">
+					<div class="row">
+						<div class="col-sm-2 hidden-xs"><img src="http://placehold.it/100x100" alt="..." class="img-responsive"/></div>
+						<div class="col-sm-10">
+							<h4 class="nomargin"><%= chosen_items.product.name %></h4>
+							<p><%= chosen_items.product.description %></p>
+						</div>
+					</div>
+				</td>
+				
+				<td data-th="Price">$<%= chosen_items.product.price %></td>
+				
+				<td data-th="Quantity">
+					
+					<%= form_for chosen_items, 
+							url: shoppers_basket_items_basket_path(basket_id: current_basket.id, items_basket_id: chosen_items.id), 
+							method: :put do |f| %>
+
+					<%= f.number_field :quantity, placeholder: chosen_items.quantity, class: "form-control text-center" %>
+
+				</td>
+				<td data-th="Subtotal" class="text-center">$<%= chosen_items.quantity * chosen_items.product.price %></td>
+				<td class="actions" data-th="">
+					 <!-- f.submit "<i class=\"fa fa-refresh\"></i>".html_safe, class: "btn btn-info btn-sm" -->
+					<%= button_tag(type: "submit", class: "btn btn-info btn-sm") do %>
+  				<span><i class="fa fa-refresh"></i></span>
+					<% end %>
+					<%= link_to "<i class=\"fa fa-trash-o\"></i>".html_safe, shoppers_basket_items_basket_path(basket_id: current_basket.id, items_basket_id: chosen_items.id), method: :delete, class: "btn btn-danger btn-sm" %>						
+				</td>
+			</tr>
+			<% end %>
+			<% end %>
+		<% end %>
+		</tbody>
+
+		<tfoot>
+			<tr class="visible-xs">
+				<td class="text-center"><strong>Total $<%= @basket.total_unpaid_price(@items_baskets) %></strong></td>
+			</tr>
+			<tr>
+				<td><%= link_to 'Continue Shopping', shoppers_products_path, class: "btn btn-warning" %></td>
+				<td colspan="2" class="hidden-xs"></td>
+				<td class="hidden-xs text-center"><strong>Total $<%= @basket.total_unpaid_price(@items_baskets) %></strong></td>
+				<td><%= link_to 'Checkout', shoppers_products_path, class: 'btn btn-success btn-block' %></td>
+			</tr>
+		</tfoot>
+
+</table>
+</div>

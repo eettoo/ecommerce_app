@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Nichasa</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/pages.css.scss" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"> -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation" style="margin:0;padding:0;">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav" href="#">Nichasa</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                      <a href="/women" class="dropdown-toggle">Women</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="/t-shirts">T-shirts</a></li>
+                        <li><a href="/jeans">Jeans</a></li>
+                        <li><a href="/dresses">Dresses</a></li>
+                        <li><a href="/shorts">Shorts</a></li>
+                        <li><a href="/coats-and-jackets">Coats and jackets</a></li>
+                      </ul>
+                    </li>
+                    <li class="dropdown">
+                    <a href="/men" class="dropdown-toggle">Men</a>
+                    <ul class="dropdown-menu">
+                      <li><a href="/t-shirts">T-shirts</a></li>
+                      <li><a href="/jeans">Jeans</a></li>
+                      <li><a href="/trousers">Trousers</a></li>
+                      <li><a href="/shorts">Shorts</a></li>
+                      <li><a href="/coats-and-jackets">Coats and jackets</a></li>
+                    </ul>
+                  </li>
+                    <li>
+                        <a href="/contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/shoppers/orders">My Orders</a>
+                    </li>
+                    <li>
+                        <a href="/users/sign_up">Join</a>
+                    </li>
+                    <li>
+                        <a href="/users/sign_in">Sign In</a>
+                    </li>
+
+                    <li>
+                    <a href="/shopping-cart"><i class="fa fa-shopping-cart fa-lg" aria-hidden="true"></i></a>
+                    </li>
+
+
+                    <li><%= link_to'Logout', destroy_user_session_path, method: :delete %></li>
+
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+    <!-- Header -->
+    <!-- <a name="about"></a> -->
+    <div class="intro-header">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-message">
+                        <h1>Nichasa</h1>
+
+
+                        <hr class="intro-divider">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+
+
+    <!-- Page Content -->
+
+        <div class="more-images">
+                  <div class="first">
+                <img src="../images/1.jpeg">
+                  </div>
+                <a href="/men"><div class="first-text">
+                  <p style="border:2px; border-style:solid; border-color: black; padding: 1em; font-size: 20px; text-align: center; letter-spacing: 6px;">Shop<br>MEN</p>
+                </div>
+                  <div class="second">
+                    <img src="../images/2.jpeg">
+                  </div>
+                    <a href="/women"><div class="second-text">
+                      <p style="border:2px; border-style:solid; border-color: black; padding: 1em; font-size: 20px; text-align: center; letter-spacing: 6px;">Shop<br>WOMEN</p>
+                    </div>
+          </div>
+
+
+        <!-- /.container -->
+
+
+    <!-- /.content-section-a -->
+
+    <!-- <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">3D Device Mockups<br>by PSDCovers</h2>
+                    <p class="lead">Turn your 2D designs into high quality, 3D product shots in seconds using free Photoshop actions by <a target="_blank" href="http://www.psdcovers.com/">PSDCovers</a>! Visit their website to download some of their awesome, free photoshop actions!</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/dog.png" alt="">
+                </div>
+            </div>
+
+        </div> -->
+        <!-- /.container -->
+
+    <!-- </div> -->
+    <!-- /.content-section-b -->
+
+    <!-- <div class="content-section-a">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-5 col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading">Google Web Fonts and<br>Font Awesome Icons</h2>
+                    <p class="lead">This template features the 'Lato' font, part of the <a target="_blank" href="http://www.google.com/fonts">Google Web Font library</a>, as well as <a target="_blank" href="http://fontawesome.io">icons from Font Awesome</a>.</p>
+                </div>
+                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+                    <img class="img-responsive" src="img/phones.png" alt="">
+                </div>
+            </div>
+
+        </div> -->
+        <!-- /.container -->
+
+    <!-- </div> -->
+    <!-- /.content-section-a -->
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Connect with us:</h2>
+                </div>
+                <div class="col-lg-6">
+                    <ul class="list-inline banner-social-buttons">
+                      <li>
+                          <a href="https://facebook.com/nichasa"><i class="fa fa-facebook fa-3x" aria-hidden="true"></i></a>
+                      </li>
+                        <li>
+                            <a href="https://twitter.com/nichasa"><i class="fa fa-twitter fa-3x" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/nichasa"><i class="fa fa-instagram fa-3x" aria-hidden="true"></i></a>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="/#">Home</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="/women">Women</a>
+                        </li>
+                        <li class="footer-menu-divider">&sdot;</li>
+                        <li>
+                            <a href="/men">Men</a>
+                        </li>
+
+                    </ul>
+                    <p class="copyright text-muted small">Copyright &copy; Nichasa 2017. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/navbar.js"></script>
+
+</body>
+
+</html>

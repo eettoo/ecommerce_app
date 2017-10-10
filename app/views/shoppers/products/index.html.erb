@@ -1,0 +1,50 @@
+<div class="container">
+	
+	<h1>All Products</h1>
+
+	<div class="row">
+
+	<% @products.each do |product| %>
+
+		<div class="col-md-3 col-sm-6">
+			
+			<span class="thumbnail">
+			
+				<img src="https://s12.postimg.org/41uq0fc4d/item_2_180x200.png" alt="...">
+				
+				<h4><%= link_to product.name, shoppers_product_path(id: product.id)  %></h4>
+				
+				<div class="ratings">
+	        <span class="glyphicon glyphicon-star"></span>
+	        <span class="glyphicon glyphicon-star"></span>
+	        <span class="glyphicon glyphicon-star"></span>
+	        <span class="glyphicon glyphicon-star"></span>
+	        <span class="glyphicon glyphicon-star-empty"></span>
+	      </div>
+				
+				<p><%= product.description %></p>
+				
+				<hr class="line">
+				
+				<div class="row">
+					
+					<div class="col-md-6 col-sm-6">
+						<p class="price">$<%= product.price %></p>
+					</div>
+					
+					<div class="col-md-6 col-sm-6">
+					 <%= link_to "Add to Cart", shoppers_product_path(id: product.id), class: "btn btn-danger btn-sm" %>
+					</div>
+					
+				</div>
+		
+			</span>
+		
+		</div>
+
+	<% end %>
+
+	</div>
+
+</div>
+
