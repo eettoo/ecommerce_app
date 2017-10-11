@@ -31,7 +31,7 @@ class Shoppers::OrdersController < ApplicationController
 
 		@basketid = Basket.find_by(user_id: current_user.id)
 		@itemsbasket = ItemsBasket.where(basket_id: @basketid)
-	
+
 		if @ordernew.save
 			flash[:success] = "Your Order is Successful! And we are preparing your package"
 			@itemsbasket.each do |f|

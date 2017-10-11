@@ -1,0 +1,50 @@
+
+
+<!-- <script src="https://code.jquery.com/jquery-latest.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->
+
+  <!DOCTYPE html>
+  <html>
+   <head>
+
+  <script src="/javascripts/adminproducts.js"></script>
+  <script src="/stylesheets/adminproducts.css.scss"></script>
+   </head>
+   <h1>Orders</h1>
+   <body>
+     <table>
+       <thead>
+         <tr>
+           <th>User</th>
+           <th>Payment Status</th>
+           <th>Payment Date</th>
+           <th>Amount</th>
+           <th>Ship Status</th>
+           <th>Ship Date</th>
+           <th></th>
+           <th></th>
+           <th></th>
+           <th></th>
+         </tr>
+       </thead>
+       <tbody>
+         <% @orders.each do |order| %>
+           <tr>
+             <td><%= order.user.id %></td>
+             <td><%= order.payment_status %></td>
+             <td><%= order.payment_date %></td>
+             <td><%= order.amount %></td>
+             <td><%= order.ship_status %></td>
+             <td><%= order.ship_date %></td>
+             <td><%= link_to 'Show', admins_order_path(order) %></td>
+             <td><%= link_to 'Edit', edit_admins_order_path(order) %></td>
+             <td><%= link_to 'Destroy', admins_order_path(order),
+                   method: :delete,
+                   data: { confirm: 'Are you sure?' } %></td>
+           </tr>
+         <% end %>
+       </tbody>
+     </table>
+   </body>
+  </html>
