@@ -7,8 +7,7 @@ Rails.application.routes.draw do
 	# 	resources :products
 	# end
 
-	resources :checkouts,  only: [:new, :create, :show]
-	
+
   devise_for :admins
   
   get '/home' => 'pages#home'
@@ -28,6 +27,8 @@ Rails.application.routes.draw do
 		end
 	end  
 
+	resources :checkouts,  only: [:new, :create, :show]
+  
   namespace :shoppers do
 	  resources :orders do
 	  	resources :items_paids
