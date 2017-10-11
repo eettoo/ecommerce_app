@@ -17,8 +17,12 @@ Rails.application.routes.draw do
   get '/men' => 'pages#men'
 
   get '/shopping-cart' =>'pages#shopping-cart'
+  
+  if Rails.env.development?
+      mount LetterOpenerWeb::Engine, at: "/letter_opener"
+    end
 
-	resources :users
+  resources :users
 
   namespace :shoppers do
 	  resources :products, only: [:index, :show]
