@@ -83,7 +83,7 @@
                     </li>
 
                     <li>
-                    <%= link_to "<i class=\"fa fa-shopping-cart\"></i>".html_safe , shoppers_basket_path(id: current_user.baskets.first) %>
+                    <%= link_to "<i class=\"fa fa-shopping-cart\"></i>".html_safe , shoppers_basket_path(id: current_basket.id) %>
                     </li>
 
                     <!-- Basket.joins(:user).where(user: current_user) -->

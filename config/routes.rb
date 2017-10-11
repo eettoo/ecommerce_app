@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks", registrations: "registrations" }
-
 	# namespace :admin do
 	# 	resources :orders
 	# 	resources :products
@@ -35,5 +34,5 @@ Rails.application.routes.draw do
   	end
 	end
 
-  root to: "pages#index"
+  root "pages#index"
 end
