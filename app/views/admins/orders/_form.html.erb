@@ -1,7 +1,5 @@
 
-<%= form_for @order, url: admins_orders_path, method: :post do |form| %>
-
-<h1>New Order</h1>
+<%= form_for @order, url: admins_order_path(id: @order.id), method: :patch do |form| %>
 
 <p>
   <%= form.label :user %><br>
@@ -37,5 +35,4 @@
 <p>
   <%= form.submit %>
 </p>
-
 <% end %>

@@ -1,15 +1,81 @@
-<h1>All Products</h1>
 
-<%= @products.each do |product| %>
 
- <!-- avatar_for(product, size: 100) put carrierwave -->
+ <!-- <h1>Products</h1>
 
- <%= link_to product.name,  %>
- 
- <%= product.description %>
+<%= link_to 'New product', new_admins_product_path %>
 
- <!-- product.gender -->
+ <table>
+   <tr>
+     <th>Name</th>
+     <th>Description</th>
+     <th>Price</th>
+     <th>Gender</th>
+     <th>Category</th>
+     <th>Quantity</th>
+   </tr>
 
- $<%= product.price %>
+   <% @products.each do |product| %>
+     <tr>
+       <td><%= product.name %></td>
+       <td><%= product.description %></td>
+       <td><%= product.price %></td>
+       <td><%= product.gender %></td>
+       <td><%= product.category %></td>
+       <td><%= product.quantity %></td>
+       <td><%= link_to 'Show', admins_product_path(product) %></td>
+       <td><%= link_to 'Edit', edit_admins_product_path(product) %></td>
+       <td><%= link_to 'Destroy', admins_product_path(product),
+             method: :delete,
+             data: { confirm: 'Are you sure?' } %></td>
+     </tr>
+   <% end %>
+ </table> -->
 
- <%= end %>
+
+ <!DOCTYPE html>
+<html>
+	<head>
+
+<script src="/javascripts/adminproducts.js"></script>
+<script src="/stylesheets/adminproducts.css.scss"></script>
+  </head>
+  <h1>Products</h1>
+	<body>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Gender</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Image</th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= product.name %></td>
+            <td><%= product.description %></td>
+            <td><%= product.price %></td>
+            <td><%= product.gender %></td>
+            <td><%= product.category %></td>
+            <td><%= product.quantity %></td>
+            <td><%= image_tag(product.image.thumb.url) if product.image?  %></td>
+            <td><%= link_to 'Show', admins_product_path(product) %></td>
+            <td><%= link_to 'Edit', edit_admins_product_path(product) %></td>
+            <td><%= link_to 'Destroy', admins_product_path(product),
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'New product', new_admins_product_path %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+	</body>
+</html>

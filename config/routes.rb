@@ -2,13 +2,13 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-	# namespace :admin do
-	# 	resources :orders
-	# 	resources :products
-	# end
-	
+	namespace :admins do
+		resources :orders, except: [:destroy]
+		resources :products
+	end
+
   devise_for :admins
-  
+
   get '/home' => 'pages#home'
 
   get '/women' => 'pages#women'
@@ -22,13 +22,13 @@ Rails.application.routes.draw do
 
 
 
-  
+
   namespace :shoppers do
 	  resources :products, only: [:index, :show]
-	  resources :baskets do 
+	  resources :baskets do
 	  	resources :items_baskets
 		end
-	end  
+	end
 
   namespace :shoppers do
 	  resources :orders do
