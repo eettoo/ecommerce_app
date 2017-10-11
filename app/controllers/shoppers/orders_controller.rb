@@ -45,6 +45,7 @@ class Shoppers::OrdersController < ApplicationController
 			end
 			@ordernew[:amount] = @ordernew.items_paids.pluck(:price).sum
 			@ordernew.save
+			OrderMailer.order_confirmation(@ordernew).deliver_later
 			redirect_to shoppers_orders_path
 		else
 			flash[:danger] = "Your Order is not successfully created, please check if payment has been successfully made"

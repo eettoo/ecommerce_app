@@ -1,0 +1,22 @@
+<h3> Your Order is in process and we will let you know once it is delivered.</h3>
+
+<h2>You Purchased the below</h2>
+<table>
+	<thead>
+		<th>Item</th>
+		<th>Quantity</th>
+		<th>Price</th>
+	</thead>
+	<tbody>
+	<% @orderconfirmation.items_paids.each do |f| %>
+		<tr>
+			<td><%= f.product.name %></td>
+			<td><%= f.quantity %></td>
+			<td><%= f.product.price %></td>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+
+<p>Total Amount: <%= @totalamount %></p>
