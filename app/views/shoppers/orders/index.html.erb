@@ -1,4 +1,4 @@
-<h2>All My Orders</h2>
+<h1>All My Orders</h1>
 
 <% @myorders.each do |f| %>
 
@@ -20,7 +20,6 @@
 	</table>
 <% end %>
 
-<%= link_to "Back to Home Page", root_path %>
+<%= link_to "Back", root_path %>
 
 <div><%= link_to "Create new test order", shoppers_orders_path, method: :post %></div>
-
