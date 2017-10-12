@@ -17,4 +17,4 @@ test:
 
   production:
   <<: *default
-  database: db/production.sqlite3
+  database: ecommerce_app_production
