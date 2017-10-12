@@ -20,18 +20,22 @@ class Shoppers::BasketsController < ApplicationController
 	private
 
 	def create_current_user_basket
+
 		if user_signed_in?
 
 			if current_user.baskets.exists?
-				current_user.baskets.first				
+				Basket.find_by(user: current_user)
 			else
 				@basket = Basket.new
 				@basket.user = current_user
 				@basket.save
+				@basket
 			end
 		
 		else
-			Basket.new(id: Basket.last.id + 1)
+
+			Basket.new(id: 1)
+			
 		end
 
 	end

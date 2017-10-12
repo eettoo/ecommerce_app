@@ -10,14 +10,15 @@ $<%= @product.price %>
 
 <%= @product.category %>
 
-<% if @product.items_basket.exists? %>
+<% if @product.items_basket.find_by(basket_id: current_basket.id) %>
 
 <!-- update form -->
-	<% current_basket = current_user.baskets.first %>
+	
 	<% current_items_basket = ItemsBasket.find_by(basket_id: current_basket.id, product_id: @product.id) %>
+
 	<%= form_for @items_basket, 
 
-			url: shoppers_basket_items_basket_path(basket_id: Basket.find_by(user: current_user), items_basket_id: @items_basket.id), 
+			url: shoppers_basket_items_basket_path(basket_id: current_basket.id, items_basket_id: @items_basket.id), 
 
 			method: :put do |f| %>
 
@@ -35,7 +36,7 @@ $<%= @product.price %>
 
 
 	<%= form_for @items_basket, 
-			url: shoppers_basket_items_baskets_path(basket_id: Basket.joins(:user).where(user: current_user)), 
+			url: shoppers_basket_items_baskets_path(basket_id: current_basket.id), 
 
 			method: :post do |f| %>
 
@@ -52,4 +53,4 @@ $<%= @product.price %>
 
 <%= link_to 'Back', shoppers_products_path %>
 
-<%= link_to 'Shopping Cart', shoppers_basket_path(basket_id: current_user.baskets.first.id) %>
+<%= link_to 'Shopping Cart', shoppers_basket_path(basket_id: current_basket.id) %>

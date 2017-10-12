@@ -16,9 +16,11 @@
 	
 		<tbody>
 
-		<% current_basket = current_user.baskets.first %>
+
 
 		<% @items_baskets.each do |chosen_items| %>
+
+		
 
 			<% if chosen_items.basket == current_basket %>
 			<tr>

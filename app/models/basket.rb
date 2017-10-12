@@ -19,7 +19,7 @@ class Basket < ApplicationRecord
 	# def current_basket
 
 	# 	if user_signed_in?
-	# 		current_user.baskets.first
+	# 		current_basket
 	# 	else
 	# 		new_basket = Basket.new
 	# 		new_basket(id: Basket.last.id + 1)
