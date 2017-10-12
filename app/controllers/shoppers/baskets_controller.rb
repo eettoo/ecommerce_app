@@ -1,9 +1,8 @@
 class Shoppers::BasketsController < ApplicationController
 
-	before_action :create_current_basket
+	before_action :create_current_user_basket
 
 	def show
-		@basket = current_user.baskets.first
 		@items_baskets = ItemsBasket.all
 	end
 
@@ -20,13 +19,21 @@ class Shoppers::BasketsController < ApplicationController
 
 	private
 
-	def create_current_basket
-		if current_user.baskets.exists?
+	def create_current_user_basket
+		if user_signed_in?
+
+			if current_user.baskets.exists?
+				current_user.baskets.first				
+			else
+				@basket = Basket.new
+				@basket.user = current_user
+				@basket.save
+			end
+		
 		else
-			@basket = Basket.new
-			@basket.user = current_user
-			@basket.save
+			Basket.new(id: Basket.last.id + 1)
 		end
+
 	end
 
 end
