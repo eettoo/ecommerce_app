@@ -14,7 +14,7 @@ class Shoppers::ItemsBasketsController < ApplicationController
 	end
 
 	def update
-		@items_basket = ItemsBasket.find(params[:items_basket_id])
+		@items_basket = ItemsBasket.find(params[:id])
 		@items_basket.update(items_basket_params)
 		redirect_to shoppers_basket_path(id: current_user.baskets.first)
 	end

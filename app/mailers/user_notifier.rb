@@ -1,4 +1,4 @@
-class UserNotifier < ActionMailer::Base
+class UserNotifier < ApplicationMailer
   default :from => 'orderconfirmation@nichasa.com'
 
   def order_confirmation(order)

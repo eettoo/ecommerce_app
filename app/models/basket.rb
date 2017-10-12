@@ -12,6 +12,7 @@ class Basket < ApplicationRecord
 		end
 
 		total.inject{ |first_num, consec_num| first_num + consec_num }
+		# can use reduce instead of inject
 
 	end
 

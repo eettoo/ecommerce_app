@@ -15,10 +15,9 @@ $<%= @product.price %>
 <!-- update form -->
 	<% current_basket = current_user.baskets.first %>
 	<% current_items_basket = ItemsBasket.find_by(basket_id: current_basket.id, product_id: @product.id) %>
-
 	<%= form_for @items_basket, 
 
-			url: shoppers_basket_items_basket_path(basket_id: Basket.joins(:user).where(user: current_user), items_basket_id: current_items_basket.id), 
+			url: shoppers_basket_items_basket_path(basket_id: Basket.find_by(user: current_user), items_basket_id: @items_basket.id), 
 
 			method: :put do |f| %>
 
