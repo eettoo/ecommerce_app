@@ -1,0 +1,37 @@
+
+<p>
+  <strong>User:</strong>
+  <%= @order.user.id %>
+</p>
+
+<p>
+  <strong>Payment Status:</strong>
+  <%= @order.payment_status %>
+</p>
+
+<p>
+  <strong>Payment Date:</strong>
+  <%= @order.payment_date %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @order.amount %>
+</p>
+
+<p>
+  <strong>Ship Status:</strong>
+  <%= @order.ship_status %>
+</p>
+
+<p>
+  <strong>Ship Date:</strong>
+  <%= @order.ship_date %>
+</p>
+
+
+
+
+
+<%= link_to 'Edit', edit_admins_order_path(@order) %> |
+<%= link_to 'Back', admins_orders_path %>

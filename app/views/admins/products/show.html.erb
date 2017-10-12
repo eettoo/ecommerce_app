@@ -1,0 +1,41 @@
+
+<p>
+  <strong>Name:</strong>
+  <%= @product.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @product.gender %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @product.category %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @product.quantity %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= image_tag(@product.image.thumb.url) if @product.image? %>
+</p>
+
+
+
+
+<%= link_to 'Edit', edit_admins_product_path(@product) %> |
+<%= link_to 'Back', admins_products_path %>

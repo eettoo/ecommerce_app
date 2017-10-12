@@ -17,9 +17,11 @@ $<%= @product.price %>
 	<% current_items_basket = ItemsBasket.find_by(basket_id: current_basket.id, product_id: @product.id) %>
 
 	<%= form_for @items_basket, 
+
 			url: shoppers_basket_items_basket_path(basket_id: Basket.joins(:user).where(user: current_user), items_basket_id: current_items_basket.id), 
+
 			method: :put do |f| %>
-		
+
 		Current<%= f.label :quantity %>
 
 
@@ -32,10 +34,12 @@ $<%= @product.price %>
 
 <% else %>
 
+
 	<%= form_for @items_basket, 
 			url: shoppers_basket_items_baskets_path(basket_id: Basket.joins(:user).where(user: current_user)), 
+
 			method: :post do |f| %>
-		
+
 		New<%= f.label :quantity %>
 
 		<%= f.number_field :quantity, placeholder: @product.quantity %>
@@ -49,8 +53,4 @@ $<%= @product.price %>
 
 <%= link_to 'Back', shoppers_products_path %>
 
-<%= link_to 'Shopping Cart', shoppers_basket_path(basket_id: current_user.baskets.first.id) %> 
-
-
-
-
+<%= link_to 'Shopping Cart', shoppers_basket_path(basket_id: current_user.baskets.first.id) %>
